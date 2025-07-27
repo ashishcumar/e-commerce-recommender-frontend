@@ -1,0 +1,115 @@
+/* e-commerce-recommender-frontend/src/assets/styles/LoginPage.css */
+.login-page {
+  max-width: 450px; /* Slightly wider for better form elements */
+  margin: 4rem auto; /* More vertical margin to center on page */
+  padding: 3rem; /* More generous padding inside the card */
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 10px; /* Consistent rounded corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+  text-align: center;
+  border: 1px solid #e0e0e0; /* Subtle border for definition */
+}
+
+.login-page h2 {
+  color: #222; /* Darker heading color */
+  margin-bottom: 2.5rem; /* More space below heading */
+  font-size: 2rem; /* Larger font size for heading */
+  font-weight: 600;
+}
+
+.auth-message {
+  color: #007bff; /* Primary blue for messages */
+  margin-bottom: 1.5rem; /* More space below message */
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem; /* Increased gap for better spacing between form groups */
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.6rem; /* More space below label */
+  color: #555; /* Softer grey for labels */
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9rem 1.2rem; /* More generous padding */
+  border: 1px solid #ddd; /* Lighter border color */
+  border-radius: 6px; /* Consistent rounded corners */
+  background-color: #f9f9f9; /* Very light background for input fields */
+  color: #333; /* Darker text for input */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+  border-color: #007bff; /* Primary blue on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle blue glow on focus */
+  outline: none; /* Remove default outline */
+  background-color: #ffffff; /* White background on focus */
+}
+
+.auth-button {
+  background-color: #007bff; /* Primary blue for action button */
+  color: white;
+  padding: 1.2rem; /* More generous padding */
+  font-size: 1.15rem; /* Slightly larger font */
+  font-weight: 600;
+  border: none;
+  border-radius: 8px; /* Consistent border radius */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  margin-top: 1rem; /* Add margin to separate from last input */
+}
+
+.auth-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.toggle-auth-mode {
+  margin-top: 2rem; /* More space above toggle text */
+  color: #777; /* Softer grey for instructional text */
+  font-size: 0.95rem;
+}
+
+.toggle-auth-mode span {
+  color: #007bff; /* Primary blue for the clickable link */
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.toggle-auth-mode span:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .login-page {
+    margin: 2rem 15px; /* Adjust margin for very small screens */
+    padding: 2rem;
+  }
+
+  .login-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .auth-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

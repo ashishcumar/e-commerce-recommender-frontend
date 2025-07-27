@@ -1,0 +1,75 @@
+/* e-commerce-recommender-frontend/src/assets/styles/HomePage.css */
+.home-page {
+  padding: 3rem 0; /* Increased vertical padding for more breathing room */
+  text-align: center;
+}
+
+.home-page h1 {
+  font-size: 3rem; /* Larger, more impactful heading */
+  font-weight: 700; /* Bolder */
+  color: #222; /* Darker color for headings */
+  margin-bottom: 1.5rem; /* More space below the main heading */
+}
+
+.home-page p {
+  font-size: 1.15rem; /* Slightly larger and more prominent tagline */
+  color: #555; /* Soft grey for descriptive text */
+  margin-bottom: 3rem; /* More space before product listings begin */
+  max-width: 800px; /* Constrain width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styles for product grid */
+.product-grid {
+    display: grid;
+    /* Responsive grid: auto-fill columns, min-width 280px, max-width 1fr */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px; /* Slightly increased gap for more visual separation */
+    margin-top: 40px; /* More space from page description */
+    padding: 0 20px; /* Horizontal padding for grid on smaller screens */
+}
+
+.product-listing h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+    text-align: center;
+    margin-bottom: 2rem; /* Space below section heading */
+    border-bottom: 2px solid #eee; /* Subtle separator */
+    padding-bottom: 1rem;
+    display: inline-block; /* Make border only as wide as text */
+}
+
+/* Add some padding to product listing section */
+.product-listing {
+    padding: 2rem 0;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .home-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-page p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-grid {
+    gap: 15px; /* Smaller gap on mobile */
+    padding: 0 10px; /* Adjust padding */
+  }
+
+  .product-listing h2 {
+      font-size: 1.8rem;
+      padding-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Single column layout on very small screens */
+  }
+}

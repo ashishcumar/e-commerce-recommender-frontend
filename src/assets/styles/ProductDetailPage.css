@@ -1,0 +1,209 @@
+/* e-commerce-recommender-frontend/src/assets/styles/ProductDetailPage.css */
+.product-detail-page {
+  padding: 3rem 2rem; /* Increased padding for more breathing room */
+  max-width: 1200px; /* Constrain width for readability on very wide screens */
+  margin: 0 auto; /* Center the content */
+}
+
+.product-detail-card {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 3rem; /* Increased gap for better separation of image and info */
+  background-color: #ffffff; /* White background for a clean look */
+  padding: 2.5rem; /* More generous padding */
+  border-radius: 10px; /* Slightly more rounded corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+  margin-bottom: 4rem; /* More space before recommendations */
+  align-items: flex-start; /* Align items to the top */
+  border: 1px solid #e0e0e0; /* Subtle border for definition */
+}
+
+.product-detail-image {
+  width: 100%;
+  max-width: 500px; /* Larger max width for image for better visual impact */
+  height: auto;
+  border-radius: 8px; /* Consistent rounded corners */
+  object-fit: contain; /* Ensure full image is visible */
+  background-color: #f5f5f5; /* Light grey background for images that don't fill area */
+  display: block;
+  flex-shrink: 0; /* Prevent image from shrinking too much */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for the image */
+}
+
+.product-detail-info {
+  flex: 1; /* Take remaining space */
+  min-width: 320px; /* Ensure info block doesn't get too small */
+  text-align: left; /* Align text to the left */
+}
+
+.product-detail-info h1 {
+  font-size: 2.8rem; /* Larger, more prominent product title */
+  font-weight: 700; /* Bolder */
+  color: #222; /* Darker heading color */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.product-detail-category {
+  font-size: 1.1rem; /* Slightly larger category text */
+  color: #777; /* Softer grey */
+  margin-bottom: 1rem; /* More space below category */
+  text-transform: capitalize; /* Capitalize for cleaner look */
+}
+
+.product-detail-price {
+  font-size: 2.5rem; /* More prominent price */
+  font-weight: 700; /* Bolder price */
+  color: #007bff; /* Primary brand blue for price highlight */
+  margin-bottom: 2rem; /* More space below price */
+  border-bottom: 1px solid #eee; /* Subtle separator */
+  padding-bottom: 1rem;
+}
+
+.product-detail-description {
+  font-size: 1.1rem;
+  line-height: 1.7; /* Improved line spacing for readability */
+  color: #555; /* Softer grey for description */
+  margin-bottom: 2rem; /* More space below description */
+}
+
+.product-detail-stock {
+  font-size: 1rem;
+  color: #666; /* Slightly darker grey */
+  margin-bottom: 2rem; /* Consistent spacing */
+}
+
+.product-detail-attributes h3 {
+  font-size: 1.3rem; /* Slightly larger attribute heading */
+  font-weight: 600;
+  color: #333; /* Darker color */
+  margin-top: 2rem; /* More space above attributes */
+  margin-bottom: 1rem;
+}
+
+.product-detail-attributes ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem; /* Consistent spacing */
+}
+
+.product-detail-attributes li {
+  background-color: #f0f0f0; /* Light background for attribute items */
+  padding: 0.8rem 1.2rem; /* More padding */
+  margin-bottom: 0.6rem; /* More spacing between items */
+  border-radius: 6px; /* Consistent rounded corners */
+  color: #444; /* Darker text */
+  font-size: 0.95rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+.add-to-cart-button {
+  background-color: #28a745; /* Green for success action */
+  color: white;
+  padding: 1.2rem 2.5rem; /* More generous padding */
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: 600;
+  border: none;
+  border-radius: 8px; /* Consistent border radius */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.add-to-cart-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.cart-message {
+    margin-top: 1.5rem; /* More space above message */
+    font-size: 1.05rem;
+    color: #007bff; /* Use primary blue for success messages */
+    font-weight: 500;
+}
+
+/* Recommendations Section */
+.recommendations-section {
+  margin-top: 5rem; /* More space from product detail card */
+  padding: 3rem 0; /* More padding */
+  border-top: 1px solid #eee; /* Subtle, lighter separator */
+  background-color: #fcfcfc; /* Very subtle different background */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Light shadow */
+}
+
+.recommendations-section h2 {
+  font-size: 2.2rem; /* Larger heading for section */
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 2.5rem; /* More space below heading */
+}
+
+.no-recommendations {
+  text-align: center;
+  color: #777; /* Softer grey */
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+/* Ensure product-grid from HomePage is reused or defined for consistency */
+/* It's preferable to have a global .product-grid or import HomePage.css */
+/* For now, ensure it works. If issues, copy product-grid from HomePage.css here. */
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .product-detail-card {
+    flex-direction: column; /* Stack image and info vertically */
+    align-items: center;
+    text-align: center; /* Center align text when stacked */
+  }
+
+  .product-detail-image {
+    max-width: 350px; /* Adjust image size for tablets */
+  }
+
+  .product-detail-info {
+    min-width: unset; /* Remove min-width when stacked */
+  }
+
+  .product-detail-info h1,
+  .product-detail-category,
+  .product-detail-price,
+  .product-detail-description,
+  .product-detail-stock,
+  .product-detail-attributes h3,
+  .add-to-cart-button {
+    text-align: center; /* Center all text elements */
+  }
+  
+  .product-detail-attributes ul {
+    align-items: center; /* Center list items as well */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-page {
+    padding: 2rem 1rem;
+  }
+
+  .product-detail-card {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .product-detail-image {
+    max-width: 100%; /* Image takes full width on small screens */
+  }
+
+  .product-detail-info h1 {
+    font-size: 2rem;
+  }
+
+  .product-detail-price {
+    font-size: 2rem;
+  }
+
+  .recommendations-section h2 {
+    font-size: 1.8rem;
+  }
+}
