@@ -1,19 +1,23 @@
 /* e-commerce-recommender-frontend/src/index.css */
 
 /* Global Reset & Box Sizing */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 /* Base HTML and Body Styles */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%; /* Ensure full viewport height */
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+  font-family: "Inter", sans-serif; /* Using Inter for a modern look */
   line-height: 1.6;
   color: #333; /* Darker text for readability on light background */
   background-color: #f8f8f8; /* Light background for the overall page */
@@ -30,14 +34,18 @@ body {
   flex-direction: column;
   min-height: 100vh; /* Ensure #root also takes full height */
   width: 100%;
-  max-width: 1400px; /* Slightly wider max-width for more content space */
   margin: 0 auto; /* Center content */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for a "contained" feel */
   background-color: #fff; /* White background for the main content area */
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #222; /* Darker headings */
   margin-top: 0;
   margin-bottom: 1rem;
@@ -69,7 +77,7 @@ button {
   padding: 0.8em 1.5em; /* More generous padding */
   font-size: 1rem; /* Standard font size */
   font-weight: 500;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   border-radius: 6px; /* Slightly less rounded for a modern look */
   border: 1px solid transparent;
   cursor: pointer;

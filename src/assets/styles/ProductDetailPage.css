@@ -1,8 +1,11 @@
 /* e-commerce-recommender-frontend/src/assets/styles/ProductDetailPage.css */
 .product-detail-page {
-  padding: 3rem 2rem; /* Increased padding for more breathing room */
-  max-width: 1200px; /* Constrain width for readability on very wide screens */
+  padding: 3.5rem 2.5rem; /* Increased overall padding for more breathing room */
+  max-width: 1200px; /* Adjusted max-width for a slightly more expansive feel */
   margin: 0 auto; /* Center the content */
+  min-height: calc(100vh - 140px); /* Adjusted min-height to fit within viewport, accounting for header/footer */
+  display: flex;
+  flex-direction: column;
 }
 
 .product-detail-card {
@@ -10,24 +13,26 @@
   flex-wrap: wrap; /* Allows wrapping on smaller screens */
   gap: 3rem; /* Increased gap for better separation of image and info */
   background-color: #ffffff; /* White background for a clean look */
-  padding: 2.5rem; /* More generous padding */
-  border-radius: 10px; /* Slightly more rounded corners */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
-  margin-bottom: 4rem; /* More space before recommendations */
+  padding: 2.5rem; /* Increased padding */
+  border-radius: 12px; /* Slightly more rounded corners for a softer look */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Softer, more pronounced shadow for a premium feel */
+  margin-bottom: 4rem; /* Increased space before recommendations */
   align-items: flex-start; /* Align items to the top */
   border: 1px solid #e0e0e0; /* Subtle border for definition */
+  flex-grow: 1; /* Allow card to grow and take available space */
 }
 
 .product-detail-image {
   width: 100%;
-  max-width: 500px; /* Larger max width for image for better visual impact */
+  max-width: 450px; /* Increased max width for image for better visual impact */
   height: auto;
-  border-radius: 8px; /* Consistent rounded corners */
+  min-height: 300px; /* Increased minimum height for the image container */
+  border-radius: 10px; /* Consistent rounded corners */
   object-fit: contain; /* Ensure full image is visible */
-  background-color: #f5f5f5; /* Light grey background for images that don't fill area */
+  background-color: #f8f8f8; /* Very light grey background for images that don't fill area, softer than f5f5f5 */
   display: block;
   flex-shrink: 0; /* Prevent image from shrinking too much */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for the image */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow for the image */
 }
 
 .product-detail-info {
@@ -37,118 +42,153 @@
 }
 
 .product-detail-info h1 {
-  font-size: 2.8rem; /* Larger, more prominent product title */
-  font-weight: 700; /* Bolder */
-  color: #222; /* Darker heading color */
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  font-size: 2.8rem; /* Increased product title font size for prominence */
+  font-weight: 800; /* Extra bold for strong impact */
+  color: #2c3e50; /* Darker, sophisticated blue-gray */
+  margin-bottom: 1rem; /* Adjusted margin */
+  line-height: 1.1; /* Tighter line height for large titles */
 }
 
 .product-detail-category {
-  font-size: 1.1rem; /* Slightly larger category text */
-  color: #777; /* Softer grey */
-  margin-bottom: 1rem; /* More space below category */
-  text-transform: capitalize; /* Capitalize for cleaner look */
+  font-size: 1rem; /* Adjusted category text size */
+  color: #5a6a7a; /* Muted blue-gray, consistent with homepage */
+  margin-bottom: 1rem; /* Adjusted margin */
+  text-transform: uppercase; /* Uppercase for a more refined look */
+  letter-spacing: 0.05em; /* Slight letter spacing */
+  font-weight: 600;
 }
 
 .product-detail-price {
-  font-size: 2.5rem; /* More prominent price */
-  font-weight: 700; /* Bolder price */
+  font-size: 2.5rem; /* Increased price font size for strong emphasis */
+  font-weight: 800; /* Extra bold for prominence */
   color: #007bff; /* Primary brand blue for price highlight */
-  margin-bottom: 2rem; /* More space below price */
-  border-bottom: 1px solid #eee; /* Subtle separator */
-  padding-bottom: 1rem;
+  margin-bottom: 2rem; /* Increased margin */
+  border-bottom: 1px solid #e0e6ed; /* Subtle separator, consistent with hero section */
+  padding-bottom: 1rem; /* Increased padding */
 }
 
 .product-detail-description {
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Increased font size for readability */
   line-height: 1.7; /* Improved line spacing for readability */
   color: #555; /* Softer grey for description */
-  margin-bottom: 2rem; /* More space below description */
+  margin-bottom: 2rem; /* Increased margin */
 }
 
 .product-detail-stock {
-  font-size: 1rem;
+  font-size: 1rem; /* Adjusted font size */
   color: #666; /* Slightly darker grey */
-  margin-bottom: 2rem; /* Consistent spacing */
+  margin-bottom: 2rem; /* Increased margin */
 }
 
 .product-detail-attributes h3 {
-  font-size: 1.3rem; /* Slightly larger attribute heading */
-  font-weight: 600;
-  color: #333; /* Darker color */
-  margin-top: 2rem; /* More space above attributes */
-  margin-bottom: 1rem;
+  font-size: 1.2rem; /* Adjusted attribute heading font size */
+  font-weight: 700; /* Bolder */
+  color: #2c3e50; /* Darker color */
+  margin-top: 2rem; /* Increased margin */
+  margin-bottom: 1rem; /* Adjusted margin */
 }
 
 .product-detail-attributes ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem; /* Consistent spacing */
+  margin-bottom: 2rem; /* Increased margin */
 }
 
 .product-detail-attributes li {
-  background-color: #f0f0f0; /* Light background for attribute items */
-  padding: 0.8rem 1.2rem; /* More padding */
-  margin-bottom: 0.6rem; /* More spacing between items */
-  border-radius: 6px; /* Consistent rounded corners */
+  background-color: #f8f8f8; /* Lighter background for attribute items */
+  padding: 0.8rem 1.2rem; /* Increased padding */
+  margin-bottom: 0.6rem; /* Increased spacing between items */
+  border-radius: 8px; /* Consistent rounded corners */
   color: #444; /* Darker text */
-  font-size: 0.95rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+  font-size: 0.9rem; /* Adjusted font size */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04); /* Slightly more pronounced subtle shadow */
+  border: 1px solid #efefef; /* Very light border */
 }
 
 .add-to-cart-button {
   background-color: #28a745; /* Green for success action */
   color: white;
-  padding: 1.2rem 2.5rem; /* More generous padding */
-  font-size: 1.2rem; /* Larger font size */
-  font-weight: 600;
+  padding: 1.2rem 2.5rem; /* Increased padding */
+  font-size: 1.1rem; /* Adjusted font size */
+  font-weight: 700; /* Bolder font weight */
   border: none;
-  border-radius: 8px; /* Consistent border radius */
+  border-radius: 10px; /* Consistent border radius */
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More pronounced shadow for button */
 }
 
 .add-to-cart-button:hover {
   background-color: #218838; /* Darker green on hover */
   transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
 .cart-message {
-    margin-top: 1.5rem; /* More space above message */
-    font-size: 1.05rem;
+    margin-top: 1.5rem; /* Increased margin */
+    font-size: 1rem; /* Adjusted font size */
     color: #007bff; /* Use primary blue for success messages */
-    font-weight: 500;
+    font-weight: 600; /* Bolder font weight */
 }
 
 /* Recommendations Section */
 .recommendations-section {
-  margin-top: 5rem; /* More space from product detail card */
-  padding: 3rem 0; /* More padding */
-  border-top: 1px solid #eee; /* Subtle, lighter separator */
-  background-color: #fcfcfc; /* Very subtle different background */
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Light shadow */
+  margin-top: 3rem; /* Reduced space from product detail card */
+  padding: 2.5rem 1rem; /* Reduced padding */
+  background-color: #f0f4f8; /* Soft background, consistent with hero section */
+  border-radius: 12px; /* Consistent rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  border: 1px solid #e0e6ed; /* Subtle border */
 }
 
 .recommendations-section h2 {
-  font-size: 2.2rem; /* Larger heading for section */
+  font-size: 2rem; /* Reduced heading font size */
   font-weight: 700;
-  color: #222;
+  color: #2c3e50; /* Darker, sophisticated blue-gray */
   text-align: center;
-  margin-bottom: 2.5rem; /* More space below heading */
+  margin-bottom: 2rem; /* Reduced margin */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px; /* Reduced padding */
 }
+
+.recommendations-section h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 80px; /* Shorter underline */
+  height: 4px; /* Thinner underline */
+  background-color: #007bff; /* Primary blue underline */
+  border-radius: 2px;
+}
+
+.recommendations-section .product-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Smaller minmax for cards */
+  gap: 20px; /* Reduced gap */
+  padding: 0 20px; /* Add horizontal padding to prevent cards from touching edges */
+}
+
+.recommendations-section .product-card-image {
+  height: 160px; /* Smaller image height for recommendation cards */
+}
+
+.recommendations-section .product-card-title {
+  font-size: 1.05rem; /* Smaller title font size for recommendation cards */
+}
+
+.recommendations-section .product-card-price {
+  font-size: 1.15rem; /* Smaller price font size for recommendation cards */
+}
+
 
 .no-recommendations {
   text-align: center;
   color: #777; /* Softer grey */
-  font-size: 1.1rem;
-  padding: 1rem;
+  font-size: 1rem; /* Adjusted font size */
+  padding: 1rem; /* Adjusted padding */
 }
-
-/* Ensure product-grid from HomePage is reused or defined for consistency */
-/* It's preferable to have a global .product-grid or import HomePage.css */
-/* For now, ensure it works. If issues, copy product-grid from HomePage.css here. */
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
@@ -156,10 +196,12 @@
     flex-direction: column; /* Stack image and info vertically */
     align-items: center;
     text-align: center; /* Center align text when stacked */
+    gap: 2rem; /* Adjusted gap */
   }
 
   .product-detail-image {
-    max-width: 350px; /* Adjust image size for tablets */
+    max-width: 300px; /* Adjusted image size for tablets */
+    min-height: 200px; /* Adjusted min-height */
   }
 
   .product-detail-info {
@@ -179,20 +221,25 @@
   .product-detail-attributes ul {
     align-items: center; /* Center list items as well */
   }
+
+  .recommendations-section .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Further smaller cards on tablet */
+  }
 }
 
 @media (max-width: 768px) {
   .product-detail-page {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem; /* Further reduced padding */
   }
 
   .product-detail-card {
-    padding: 1.5rem;
-    gap: 2rem;
+    padding: 1.5rem; /* Further reduced padding */
+    gap: 1.5rem; /* Further reduced gap */
   }
 
   .product-detail-image {
     max-width: 100%; /* Image takes full width on small screens */
+    min-height: 180px; /* Adjusted min-height */
   }
 
   .product-detail-info h1 {
@@ -205,5 +252,30 @@
 
   .recommendations-section h2 {
     font-size: 1.8rem;
+  }
+
+  .recommendations-section .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Even smaller cards on mobile */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-info h1 {
+    font-size: 1.8rem;
+  }
+  .product-detail-price {
+    font-size: 1.8rem;
+  }
+  .add-to-cart-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  .recommendations-section h2 {
+    font-size: 1.6rem;
+
+  }
+  .recommendations-section .product-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
   }
 }

@@ -29,7 +29,7 @@ const apiRequest = async (url, method = 'GET', data = null) => {
 
 // --- User API ---
 export const createUser = (userData) => apiRequest('/users/', 'POST', userData);
-export const getUser = (userId) => apiRequest(`/users/${userId}/`);
+export const getUser = (userId) => apiRequest(`/users/`);
 
 export const getAllProducts = () => apiRequest('/products/');
 export const getProductById = (productId) => apiRequest(`/products/${productId}/`);

@@ -1,61 +1,68 @@
 // e-commerce-recommender-frontend/src/pages/LoginPage.jsx
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { createUser, getUser } from '../api'; // Import API functions
-import '../assets/styles/LoginPage.css'; // New CSS file
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createUser, getUser } from "../api"; // Import API functions
+import "../assets/styles/LoginPage.css"; // New CSS file
 
 function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState(''); // For registration
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState(""); // For registration
+  const [message, setMessage] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const navigate = useNavigate();
 
   const handleAuth = async (event) => {
     event.preventDefault();
-    setMessage('');
+    setMessage("");
 
     try {
       let userData;
       if (isRegistering) {
         // Register new user
         userData = await createUser({ name, email, password });
-        setMessage(`Registration successful for ${userData.email}. You can now log in.`);
+        if (userData?.user_id) {
+          localStorage.setItem("user_id", JSON.stringify(userData?.user_id));
+        }
+        setMessage(
+          `Registration successful for ${userData.email}. You can now log in.`
+        );
         setIsRegistering(false); // Switch to login mode after registration
-        setEmail('');
-        setPassword('');
-        setName('');
+        setEmail("");
+        setPassword("");
+        setName("");
       } else {
         // Simple login simulation: try to get user by email.
         // In a real app, you'd send username/password to backend for authentication.
         // For this demo, we assume if user exists, they are "logged in".
         // A more robust approach would be to have a dedicated /login endpoint
         // that validates credentials and returns a user ID/token.
-        const allUsers = await getUser(''); // Fetch all users (simplistic)
-        const foundUser = allUsers.find(u => u.email === email);
+        const allUsers = await getUser(""); // Fetch all users (simplistic)
+        const foundUser = allUsers.find((u) => u.email === email);
 
         if (foundUser) {
           // Store the user ID (Django's product_id) in local storage
-          localStorage.setItem('ecommerce_user_id', foundUser.user_id);
-          localStorage.setItem('ecommerce_user_name', foundUser.name);
+          localStorage.setItem("ecommerce_user_id", foundUser.user_id);
+          localStorage.setItem("ecommerce_user_name", foundUser.name);
           setMessage(`Welcome, ${foundUser.name}! Logging you in...`);
           // Redirect to home or a dashboard
-          navigate('/');
+          navigate("/");
           window.location.reload(); // Force reload to update context/state if necessary
         } else {
-          setMessage('Login failed: User not found or incorrect credentials. Try registering.');
+          setMessage(
+            "Login failed: User not found or incorrect credentials. Try registering."
+          );
         }
       }
     } catch (error) {
       setMessage(`Authentication failed: ${error.message}`);
-      console.error('Auth error:', error);
+      console.error("Auth error:", error);
     }
   };
 
   return (
     <div className="login-page">
-      <h2>{isRegistering ? 'Register' : 'Login'}</h2>
+      <h2>{isRegistering ? "Register" : "Login"}</h2>
       {message && <p className="auth-message">{message}</p>}
       <form onSubmit={handleAuth} className="auth-form">
         {isRegistering && (
@@ -91,14 +98,20 @@ function LoginPage() {
           />
         </div>
         <button type="submit" className="auth-button">
-          {isRegistering ? 'Register' : 'Login'}
+          {isRegistering ? "Register" : "Login"}
         </button>
       </form>
       <p className="toggle-auth-mode">
         {isRegistering ? (
-          <>Already have an account? <span onClick={() => setIsRegistering(false)}>Login here</span>.</>
+          <>
+            Already have an account?{" "}
+            <span onClick={() => setIsRegistering(false)}>Login here</span>.
+          </>
         ) : (
-          <>Don't have an account? <span onClick={() => setIsRegistering(true)}>Register here</span>.</>
+          <>
+            Don't have an account?{" "}
+            <span onClick={() => setIsRegistering(true)}>Register here</span>.
+          </>
         )}
       </p>
     </div>
