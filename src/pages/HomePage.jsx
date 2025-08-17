@@ -1,16 +1,14 @@
-// e-commerce-recommender-frontend/src/pages/HomePage.jsx
-
 import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../api";
 import ProductCard from "../components/ProductCard";
-import "../assets/styles/HomePage.css"; // Updated CSS for new sections
+import "../assets/styles/HomePage.css";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0); // For slideshow
-  const [slideshowProducts, setSlideshowProducts] = useState([]); // Products for the slideshow
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideshowProducts, setSlideshowProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,10 +17,8 @@ function HomePage() {
         const data = await getAllProducts();
         setProducts(data);
 
-        // Select a few products for the slideshow (e.g., first 5 or random)
-        // Ensure they have images.
         const productsWithImages = data.filter((p) => p.image_url);
-        const selectedSlides = productsWithImages.slice(0, 5); // Take the first 5 with images
+        const selectedSlides = productsWithImages.slice(0, 5);
         setSlideshowProducts(selectedSlides);
       } catch (err) {
         setError(
@@ -37,7 +33,6 @@ function HomePage() {
     fetchProducts();
   }, []);
 
-  // Slideshow logic
   useEffect(() => {
     localStorage.setItem("ecommerce_user_id", 1);
     if (slideshowProducts.length > 0) {
@@ -45,8 +40,8 @@ function HomePage() {
         setCurrentSlide(
           (prevSlide) => (prevSlide + 1) % slideshowProducts.length
         );
-      }, 5000); // Change slide every 5 seconds
-      return () => clearInterval(interval); // Cleanup interval on component unmount
+      }, 5000);
+      return () => clearInterval(interval);
     }
   }, [slideshowProducts]);
 
@@ -56,7 +51,7 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      {/* Hero Section with Slideshow */}
+      {}
       <section className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">Discover Your Next Favorite Product</h1>
@@ -94,7 +89,7 @@ function HomePage() {
         )}
       </section>
 
-      {/* Main Product Listing Section */}
+      {}
       <section className="product-listing-section">
         <h2 className="section-title">Featured Products</h2>
         {products.length === 0 ? (

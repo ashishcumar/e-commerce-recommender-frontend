@@ -1,211 +1,208 @@
-/* e-commerce-recommender-frontend/src/assets/styles/ProductDetailPage.css */
 .product-detail-page {
-  padding: 3.5rem 2.5rem; /* Increased overall padding for more breathing room */
-  max-width: 1200px; /* Adjusted max-width for a slightly more expansive feel */
-  margin: 0 auto; /* Center the content */
-  min-height: calc(100vh - 140px); /* Adjusted min-height to fit within viewport, accounting for header/footer */
+  padding: 3.5rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 140px);
   display: flex;
   flex-direction: column;
 }
 
 .product-detail-card {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  gap: 3rem; /* Increased gap for better separation of image and info */
-  background-color: #ffffff; /* White background for a clean look */
-  padding: 2.5rem; /* Increased padding */
-  border-radius: 12px; /* Slightly more rounded corners for a softer look */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Softer, more pronounced shadow for a premium feel */
-  margin-bottom: 4rem; /* Increased space before recommendations */
-  align-items: flex-start; /* Align items to the top */
-  border: 1px solid #e0e0e0; /* Subtle border for definition */
-  flex-grow: 1; /* Allow card to grow and take available space */
+  flex-wrap: wrap;
+  gap: 3rem;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 4rem;
+  align-items: flex-start;
+  border: 1px solid #e0e0e0;
+  flex-grow: 1;
 }
 
 .product-detail-image {
   width: 100%;
-  max-width: 450px; /* Increased max width for image for better visual impact */
+  max-width: 450px;
   height: auto;
-  min-height: 300px; /* Increased minimum height for the image container */
-  border-radius: 10px; /* Consistent rounded corners */
-  object-fit: contain; /* Ensure full image is visible */
-  background-color: #f8f8f8; /* Very light grey background for images that don't fill area, softer than f5f5f5 */
+  min-height: 300px;
+  border-radius: 10px;
+  object-fit: contain;
+  background-color: #f8f8f8;
   display: block;
-  flex-shrink: 0; /* Prevent image from shrinking too much */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow for the image */
+  flex-shrink: 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
 .product-detail-info {
-  flex: 1; /* Take remaining space */
-  min-width: 320px; /* Ensure info block doesn't get too small */
-  text-align: left; /* Align text to the left */
+  flex: 1;
+  min-width: 320px;
+  text-align: left;
 }
 
 .product-detail-info h1 {
-  font-size: 2.8rem; /* Increased product title font size for prominence */
-  font-weight: 800; /* Extra bold for strong impact */
-  color: #2c3e50; /* Darker, sophisticated blue-gray */
-  margin-bottom: 1rem; /* Adjusted margin */
-  line-height: 1.1; /* Tighter line height for large titles */
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 .product-detail-category {
-  font-size: 1rem; /* Adjusted category text size */
-  color: #5a6a7a; /* Muted blue-gray, consistent with homepage */
-  margin-bottom: 1rem; /* Adjusted margin */
-  text-transform: uppercase; /* Uppercase for a more refined look */
-  letter-spacing: 0.05em; /* Slight letter spacing */
+  font-size: 1rem;
+  color: #5a6a7a;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-weight: 600;
 }
 
 .product-detail-price {
-  font-size: 2.5rem; /* Increased price font size for strong emphasis */
-  font-weight: 800; /* Extra bold for prominence */
-  color: #007bff; /* Primary brand blue for price highlight */
-  margin-bottom: 2rem; /* Increased margin */
-  border-bottom: 1px solid #e0e6ed; /* Subtle separator, consistent with hero section */
-  padding-bottom: 1rem; /* Increased padding */
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #007bff;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 1rem;
 }
 
 .product-detail-description {
-  font-size: 1.1rem; /* Increased font size for readability */
-  line-height: 1.7; /* Improved line spacing for readability */
-  color: #555; /* Softer grey for description */
-  margin-bottom: 2rem; /* Increased margin */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
 .product-detail-stock {
-  font-size: 1rem; /* Adjusted font size */
-  color: #666; /* Slightly darker grey */
-  margin-bottom: 2rem; /* Increased margin */
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 .product-detail-attributes h3 {
-  font-size: 1.2rem; /* Adjusted attribute heading font size */
-  font-weight: 700; /* Bolder */
-  color: #2c3e50; /* Darker color */
-  margin-top: 2rem; /* Increased margin */
-  margin-bottom: 1rem; /* Adjusted margin */
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .product-detail-attributes ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem; /* Increased margin */
+  margin-bottom: 2rem;
 }
 
 .product-detail-attributes li {
-  background-color: #f8f8f8; /* Lighter background for attribute items */
-  padding: 0.8rem 1.2rem; /* Increased padding */
-  margin-bottom: 0.6rem; /* Increased spacing between items */
-  border-radius: 8px; /* Consistent rounded corners */
-  color: #444; /* Darker text */
-  font-size: 0.9rem; /* Adjusted font size */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04); /* Slightly more pronounced subtle shadow */
-  border: 1px solid #efefef; /* Very light border */
+  background-color: #f8f8f8;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 0.6rem;
+  border-radius: 8px;
+  color: #444;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #efefef;
 }
 
 .add-to-cart-button {
-  background-color: #28a745; /* Green for success action */
+  background-color: #28a745;
   color: white;
-  padding: 1.2rem 2.5rem; /* Increased padding */
-  font-size: 1.1rem; /* Adjusted font size */
-  font-weight: 700; /* Bolder font weight */
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   border: none;
-  border-radius: 10px; /* Consistent border radius */
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More pronounced shadow for button */
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .add-to-cart-button:hover {
-  background-color: #218838; /* Darker green on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .cart-message {
-    margin-top: 1.5rem; /* Increased margin */
-    font-size: 1rem; /* Adjusted font size */
-    color: #007bff; /* Use primary blue for success messages */
-    font-weight: 600; /* Bolder font weight */
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #007bff;
+  font-weight: 600;
 }
 
-/* Recommendations Section */
 .recommendations-section {
-  margin-top: 3rem; /* Reduced space from product detail card */
-  padding: 2.5rem 1rem; /* Reduced padding */
-  background-color: #f0f4f8; /* Soft background, consistent with hero section */
-  border-radius: 12px; /* Consistent rounded corners */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-  border: 1px solid #e0e6ed; /* Subtle border */
+  margin-top: 3rem;
+  padding: 2.5rem 1rem;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e6ed;
 }
 
 .recommendations-section h2 {
-  font-size: 2rem; /* Reduced heading font size */
+  font-size: 2rem;
   font-weight: 700;
-  color: #2c3e50; /* Darker, sophisticated blue-gray */
+  color: #2c3e50;
   text-align: center;
-  margin-bottom: 2rem; /* Reduced margin */
+  margin-bottom: 2rem;
   position: relative;
   display: inline-block;
-  padding-bottom: 10px; /* Reduced padding */
+  padding-bottom: 10px;
 }
 
 .recommendations-section h2::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  width: 80px; /* Shorter underline */
-  height: 4px; /* Thinner underline */
-  background-color: #007bff; /* Primary blue underline */
+  width: 80px;
+  height: 4px;
+  background-color: #007bff;
   border-radius: 2px;
 }
 
 .recommendations-section .product-grid {
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Smaller minmax for cards */
-  gap: 20px; /* Reduced gap */
-  padding: 0 20px; /* Add horizontal padding to prevent cards from touching edges */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .recommendations-section .product-card-image {
-  height: 160px; /* Smaller image height for recommendation cards */
+  height: 160px;
 }
 
 .recommendations-section .product-card-title {
-  font-size: 1.05rem; /* Smaller title font size for recommendation cards */
+  font-size: 1.05rem;
 }
 
 .recommendations-section .product-card-price {
-  font-size: 1.15rem; /* Smaller price font size for recommendation cards */
+  font-size: 1.15rem;
 }
-
 
 .no-recommendations {
   text-align: center;
-  color: #777; /* Softer grey */
-  font-size: 1rem; /* Adjusted font size */
-  padding: 1rem; /* Adjusted padding */
+  color: #777;
+  font-size: 1rem;
+  padding: 1rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
   .product-detail-card {
-    flex-direction: column; /* Stack image and info vertically */
+    flex-direction: column;
     align-items: center;
-    text-align: center; /* Center align text when stacked */
-    gap: 2rem; /* Adjusted gap */
+    text-align: center;
+    gap: 2rem;
   }
 
   .product-detail-image {
-    max-width: 300px; /* Adjusted image size for tablets */
-    min-height: 200px; /* Adjusted min-height */
+    max-width: 300px;
+    min-height: 200px;
   }
 
   .product-detail-info {
-    min-width: unset; /* Remove min-width when stacked */
+    min-width: unset;
   }
 
   .product-detail-info h1,
@@ -215,31 +212,31 @@
   .product-detail-stock,
   .product-detail-attributes h3,
   .add-to-cart-button {
-    text-align: center; /* Center all text elements */
+    text-align: center;
   }
-  
+
   .product-detail-attributes ul {
-    align-items: center; /* Center list items as well */
+    align-items: center;
   }
 
   .recommendations-section .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Further smaller cards on tablet */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .product-detail-page {
-    padding: 2rem 1rem; /* Further reduced padding */
+    padding: 2rem 1rem;
   }
 
   .product-detail-card {
-    padding: 1.5rem; /* Further reduced padding */
-    gap: 1.5rem; /* Further reduced gap */
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 
   .product-detail-image {
-    max-width: 100%; /* Image takes full width on small screens */
-    min-height: 180px; /* Adjusted min-height */
+    max-width: 100%;
+    min-height: 180px;
   }
 
   .product-detail-info h1 {
@@ -255,7 +252,7 @@
   }
 
   .recommendations-section .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Even smaller cards on mobile */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
   }
 }
@@ -273,9 +270,8 @@
   }
   .recommendations-section h2 {
     font-size: 1.6rem;
-
   }
   .recommendations-section .product-grid {
-    grid-template-columns: 1fr; /* Single column on very small screens */
+    grid-template-columns: 1fr;
   }
 }

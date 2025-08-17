@@ -1,4 +1,3 @@
-// e-commerce-recommender-frontend/src/pages/ProductDetailPage.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
@@ -7,10 +6,10 @@ import {
   logProductView,
   addProductToCart,
 } from "../api";
-import ProductCard from "../components/ProductCard"; // For recommendations
+import ProductCard from "../components/ProductCard";
 import "../assets/styles/ProductDetailPage.css";
 
-const DEMO_USER_ID = 1; // Make sure a user with this ID exists in your Django DB
+const FALLBACK_DEMO_USER_ID = 1;
 
 function ProductDetailPage() {
   const { productId } = useParams();
@@ -43,10 +42,14 @@ function ProductDetailPage() {
         }
         setParsedAttributes(attributesObj);
 
-        if (DEMO_USER_ID) {
-          logProductView(DEMO_USER_ID, productId).catch((err) =>
+        const userId =
+          localStorage.getItem("ecommerce_user_id") || FALLBACK_DEMO_USER_ID;
+        if (userId) {
+          logProductView(userId, productId).catch((err) =>
             console.error("Failed to log view:", err)
           );
+        } else {
+          console.warn("No user ID found for logging product view.");
         }
 
         const recsData = await getProductRecommendations(productId);
@@ -66,11 +69,19 @@ function ProductDetailPage() {
     }
   }, [productId]);
 
-  const handleAddToCart = async () => {
+  const handleAddToCart = () => {
     if (!product) return;
+
+    const userId = localStorage.getItem("ecommerce_user_id");
+    if (!userId) {
+      setCartMessage("Please log in to add items to your cart.");
+      return;
+    }
+
     try {
       setCartMessage("Adding to cart...");
-      await addProductToCart(DEMO_USER_ID, product.product_id);
+
+      addProductToCart(userId, product);
       setCartMessage(`${product.name} added to cart!`);
     } catch (err) {
       setCartMessage("Failed to add to cart: " + err.message);
@@ -85,7 +96,7 @@ function ProductDetailPage() {
     return <div className="no-product-message">Product not found.</div>;
 
   const productPrice = parseFloat(product.price);
-  
+
   return (
     <div className="product-detail-page">
       <div className="product-detail-card">
@@ -115,14 +126,12 @@ function ProductDetailPage() {
                     {Array.isArray(value) ? (
                       value.join(", ")
                     ) : typeof value === "object" && value !== null ? (
-                      // Custom rendering for dimensions object
                       key === "dimensions" ? (
                         <>
                           <b>depth</b> : {value.depth}cm, <b>height</b> :
                           {value.height}cm, <b>width</b> : {value.width}cm
                         </>
                       ) : (
-                        // Fallback for other objects
                         JSON.stringify(value)
                       )
                     ) : (

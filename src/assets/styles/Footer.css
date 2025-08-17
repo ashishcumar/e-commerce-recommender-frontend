@@ -1,22 +1,21 @@
-/* e-commerce-recommender-frontend/src/assets/styles/Footer.css */
 .footer {
-  background-color: #333; /* Keeping a dark footer for contrast and common e-commerce practice */
-  padding: 1.5rem 2rem; /* More vertical padding for better spacing */
-  color: #f0f0f0; /* Lighter text for contrast on dark background */
+  background-color: #333;
+  padding: 1.5rem 2rem;
+  color: #f0f0f0;
   text-align: center;
-  margin-top: auto; /* Ensures footer sticks to the bottom */
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15); /* Softer, slightly more pronounced shadow */
-  border-top: 1px solid #444; /* Subtle top border for definition */
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid #444;
 }
 
 .footer-container {
-  max-width: 1400px; /* Match root max-width for consistency */
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 1.5rem; /* Add gap for spacing between items on wrap */
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .footer-nav ul {
@@ -24,37 +23,36 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.5rem; /* Increased gap for better spacing */
+  gap: 1.5rem;
 }
 
 .footer-nav li a {
-  color: #f0f0f0; /* Lighter color for links on dark background */
+  color: #f0f0f0;
   text-decoration: none;
-  font-size: 0.95rem; /* Slightly larger font size */
+  font-size: 0.95rem;
   transition: color 0.2s ease-in-out;
 }
 
 .footer-nav li a:hover {
-  color: #007bff; /* Primary blue on hover for consistent branding */
+  color: #007bff;
 }
 
 .footer p {
   margin: 0;
-  font-size: 0.95rem; /* Consistent font size with links */
-  color: #bbb; /* Softer grey for copyright text */
+  font-size: 0.95rem;
+  color: #bbb;
 }
 
-/* Responsive Adjustments for Footer */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     text-align: center;
     align-items: center;
   }
 
   .footer-nav ul {
-    flex-direction: column; /* Stack navigation links vertically */
-    gap: 0.5rem; /* Reduce gap when stacked */
-    margin-top: 1rem; /* Add space between text and nav */
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
 }

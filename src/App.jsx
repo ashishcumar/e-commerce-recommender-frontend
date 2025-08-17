@@ -1,18 +1,17 @@
-// e-commerce-recommender-frontend/src/App.jsx
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Header from './components/Header'; // Import Header
-import Footer from './components/Footer'; // Import Footer
-import './App.css'; // General app styles (already empty for now)
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   return (
     <div className="app-container">
-      <Header /> 
+      <Header />
       <main className="main-content">
-        <Outlet /> 
+        <Outlet />
       </main>
-      <Footer /> 
+      <Footer />
     </div>
   );
 }

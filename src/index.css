@@ -1,101 +1,91 @@
-/* e-commerce-recommender-frontend/src/index.css */
-
-/* Global Reset & Box Sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Base HTML and Body Styles */
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure full viewport height */
+  height: 100%;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Inter", sans-serif; /* Using Inter for a modern look */
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
-  color: #333; /* Darker text for readability on light background */
-  background-color: #f8f8f8; /* Light background for the overall page */
+  color: #333;
+  background-color: #f8f8f8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  min-height: 100vh; /* Ensure body takes at least full viewport height */
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Root Element for React App */
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure #root also takes full height */
+  min-height: 100vh;
   width: 100%;
-  margin: 0 auto; /* Center content */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for a "contained" feel */
-  background-color: #fff; /* White background for the main content area */
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
 }
 
-/* Headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: #222; /* Darker headings */
+  color: #222;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-weight: 600; /* Slightly bolder for professionalism */
+  font-weight: 600;
 }
 
-/* Paragraphs */
 p {
-  color: #555; /* Softer grey for paragraphs */
+  color: #555;
   margin-bottom: 1rem;
 }
 
-/* Links */
 a {
-  color: #007bff; /* Standard blue for links */
+  color: #007bff;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3;
   text-decoration: underline;
 }
 
-/* Buttons - General Styling */
 button {
-  display: inline-flex; /* For better alignment of text/icons */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8em 1.5em; /* More generous padding */
-  font-size: 1rem; /* Standard font size */
+  padding: 0.8em 1.5em;
+  font-size: 1rem;
   font-weight: 500;
   font-family: "Inter", sans-serif;
-  border-radius: 6px; /* Slightly less rounded for a modern look */
+  border-radius: 6px;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.2s ease-in-out; /* Smooth transitions for all properties */
-  white-space: nowrap; /* Prevent text wrapping */
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
 }
 
 button:hover {
-  opacity: 0.9; /* Subtle hover effect */
+  opacity: 0.9;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 2px solid #007bff; /* Clear focus indicator */
+  outline: 2px solid #007bff;
   outline-offset: 2px;
 }
 
-/* Specific Button Styles (Example - you'll define more in component CSS) */
 .primary-button {
   background-color: #007bff;
   color: white;
@@ -116,7 +106,6 @@ button:focus-visible {
   border-color: #5a6268;
 }
 
-/* App Container and Main Content */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -125,14 +114,13 @@ button:focus-visible {
 }
 
 .main-content {
-  flex-grow: 1; /* Allows main content to take up available space */
-  padding: 30px; /* More generous padding for main content */
+  flex-grow: 1;
+  padding: 30px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   #root {
-    padding: 0 15px; /* Adjust padding for smaller screens */
+    padding: 0 15px;
   }
   .main-content {
     padding: 20px 15px;

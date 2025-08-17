@@ -1,4 +1,3 @@
-/* e-commerce-recommender-frontend/src/assets/styles/Header.css */
 .header {
   background-color: #333;
   padding: 1rem 2rem;
@@ -27,7 +26,7 @@
   padding: 0;
   display: flex;
   gap: 1.5rem;
-  align-items: center; /* Align items vertically */
+  align-items: center;
 }
 
 .main-nav li a {
@@ -42,22 +41,22 @@
 }
 
 .main-nav .user-greeting {
-    color: #ffd700; /* Gold color for welcome message */
-    font-weight: bold;
-    margin-left: 1rem;
+  color: #ffd700;
+  font-weight: bold;
+  margin-left: 1rem;
 }
 
 .main-nav .logout-button {
-    background-color: #dc3545; /* Red color for logout */
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease-in-out;
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .main-nav .logout-button:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }

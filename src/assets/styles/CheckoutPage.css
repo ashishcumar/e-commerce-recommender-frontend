@@ -1,25 +1,25 @@
-/* e-commerce-recommender-frontend/src/assets/styles/CheckoutPage.css */
 .checkout-page {
-  max-width: 650px; /* Slightly wider for better content distribution */
-  margin: 4rem auto; /* More vertical margin to center on page */
-  padding: 3rem; /* More generous padding inside the card */
-  background-color: #ffffff; /* White background for a clean look */
-  border-radius: 10px; /* Consistent rounded corners */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+  max-width: 650px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border: 1px solid #e0e0e0; /* Subtle border for definition */
+  border: 1px solid #e0e0e0;
 }
 
 .checkout-page h2 {
-  color: #222; /* Darker heading color */
-  margin-bottom: 2.5rem; /* More space below heading */
-  font-size: 2.2rem; /* Larger font size for heading */
+  color: #222;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
-.order-status-message, .empty-checkout-message {
-  color: #007bff; /* Primary blue for messages */
-  margin-bottom: 2rem; /* More space below message */
+.order-status-message,
+.empty-checkout-message {
+  color: #007bff;
+  margin-bottom: 2rem;
   font-size: 1.05rem;
   font-weight: 500;
 }
@@ -31,13 +31,13 @@
 .checkout-items {
   text-align: left;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #eee; /* Subtle separator */
+  border-bottom: 1px solid #eee;
   padding-bottom: 1.5rem;
 }
 
 .checkout-items h3 {
-  color: #333; /* Darker sub-heading color */
-  margin-bottom: 1.2rem; /* More space below heading */
+  color: #333;
+  margin-bottom: 1.2rem;
   font-size: 1.3rem;
   font-weight: 600;
 }
@@ -48,54 +48,53 @@
 }
 
 .checkout-items li {
-  background-color: #fcfcfc; /* Very subtle light background for item list */
-  padding: 0.9rem 1.2rem; /* More generous padding */
-  border-radius: 6px; /* Consistent rounded corners */
-  margin-bottom: 0.8rem; /* More spacing between items */
-  color: #555; /* Softer text color */
+  background-color: #fcfcfc;
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+  color: #555;
   font-size: 0.95rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Very subtle shadow for list items */
-  border: 1px solid #f0f0f0; /* Light border */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f0f0;
 }
 
 .checkout-summary-details {
-  text-align: right; /* Align to the right for summary */
-  margin-bottom: 2.5rem; /* More space before the button */
-  padding-top: 1.5rem; /* Space above summary section */
+  text-align: right;
+  margin-bottom: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 .checkout-summary-details h3 {
-  font-size: 2.2rem; /* Larger and bolder for the total amount */
-  color: #222; /* Darker color */
+  font-size: 2.2rem;
+  color: #222;
   font-weight: 700;
-  margin-bottom: 0; /* No margin below if it's the last element before button */
+  margin-bottom: 0;
 }
 
 .place-order-button {
-  background-color: #28a745; /* Green for success action (Consistent with Add to Cart) */
+  background-color: #28a745;
   color: white;
-  padding: 1.2rem 2.5rem; /* More generous padding */
-  font-size: 1.2rem; /* Larger font size */
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   border: none;
-  border-radius: 8px; /* Consistent border radius */
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .place-order-button:hover {
-  background-color: #218838; /* Darker green on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #218838;
+  transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .checkout-page {
     padding: 2rem 1rem;
-    margin: 2rem 15px; /* Adjust margin for smaller screens */
+    margin: 2rem 15px;
   }
 
   .checkout-page h2 {
@@ -103,17 +102,17 @@
   }
 
   .checkout-items li {
-    flex-direction: column; /* Stack item details vertically */
+    flex-direction: column;
     align-items: flex-start;
     padding: 0.8rem;
   }
 
   .checkout-summary-details {
-    text-align: center; /* Center total on small screens */
+    text-align: center;
   }
 
   .place-order-button {
-    width: 100%; /* Make button full width */
+    width: 100%;
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
   }

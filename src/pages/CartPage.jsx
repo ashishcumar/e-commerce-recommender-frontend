@@ -1,114 +1,182 @@
-// e-commerce-recommender-frontend/src/pages/CartPage.jsx
-
-import React, { useEffect, useState } from 'react';
-import { getCartByUserId, updateCartItemQuantity, removeProductFromCart } from '../api';
-import { Link, useNavigate } from 'react-router-dom';
-import '../assets/styles/CartPage.css';
+import React, { useEffect, useState } from "react";
+import {
+  getCartByUserId,
+  updateCartItemQuantity,
+  removeProductFromCart,
+} from "../api";
+import { Link, useNavigate } from "react-router-dom";
+import "../assets/styles/CartPage.css";
 
 function CartPage() {
-  const [cart, setCart] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const userId = localStorage.getItem('ecommerce_user_id');
+  const userId = localStorage.getItem("ecommerce_user_id");
 
-  useEffect(() => {
+  const loadCartFromStorage = () => {
     if (!userId) {
-      setError('Please log in to view your cart.');
+      setError("Please log in to view your cart.");
       setLoading(false);
       return;
     }
+    try {
+      setLoading(true);
 
-    const fetchCart = async () => {
-      try {
-        setLoading(true);
-        const data = await getCartByUserId(userId);
-        setCart(data);
-      } catch (err) {
-        setError('Failed to fetch cart. ' + err.message);
-        console.error(err);
-      } finally {
-        setLoading(false);
+      const userCart = getCartByUserId(userId);
+      setCartItems(userCart);
+
+      if (userCart.length === 0) {
+        setMessage("Your cart is empty. Start shopping!");
+      } else {
+        setMessage("");
       }
-    };
+    } catch (err) {
+      setError("Failed to load cart from local storage. Please try again.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchCart();
+  useEffect(() => {
+    loadCartFromStorage();
   }, [userId]);
 
-  const handleUpdateQuantity = async (productId, newQuantity) => {
-    setMessage('');
+  const handleUpdateQuantity = (productId, newQuantity) => {
+    setMessage("");
     try {
-      await updateCartItemQuantity(userId, productId, newQuantity);
-      setMessage('Cart updated successfully!');
-      const updatedCart = await getCartByUserId(userId);
-      setCart(updatedCart);
+      const updatedCart = updateCartItemQuantity(
+        userId,
+        productId,
+        newQuantity
+      );
+      setCartItems(updatedCart);
+      setMessage("Cart updated successfully!");
     } catch (err) {
-      setMessage('Failed to update cart: ' + err.message);
+      setMessage("Failed to update cart: " + err.message);
       console.error(err);
     }
   };
 
-  const handleRemoveItem = async (productId) => {
-    setMessage('');
+  const handleRemoveItem = (productId) => {
+    setMessage("");
     try {
-      await removeProductFromCart(userId, productId);
-      setMessage('Item removed from cart!');
-      const updatedCart = await getCartByUserId(userId);
-      setCart(updatedCart);
+      const updatedCart = removeProductFromCart(userId, productId);
+      setCartItems(updatedCart);
+      setMessage("Item removed from cart!");
     } catch (err) {
-      setMessage('Failed to remove item: ' + err.message);
+      setMessage("Failed to remove item: " + err.message);
       console.error(err);
     }
   };
 
   const calculateTotal = () => {
-    if (!cart || !cart.items) return 0;
-    // Ensure product.price is converted to a number for calculation
-    return cart.items.reduce((sum, item) => sum + (item.quantity * parseFloat(item.product.price)), 0);
+    if (!cartItems || cartItems.length === 0) return 0;
+
+    return cartItems.reduce(
+      (sum, item) =>
+        sum + item.quantity * parseFloat(item.productDetails.price),
+      0
+    );
   };
 
   if (loading) return <div className="loading-message">Loading cart...</div>;
   if (error) return <div className="error-message">{error}</div>;
-  if (!userId) return <div className="no-user-message">Please <Link to="/login">log in</Link> to view your cart.</div>;
-
+  if (!userId)
+    return (
+      <div className="no-user-message">
+        Please <Link to="/login">log in</Link> to view your cart.
+      </div>
+    );
 
   return (
     <div className="cart-page">
       <h2>Your Shopping Cart</h2>
       {message && <p className="cart-message">{message}</p>}
 
-      {cart && cart.items && cart.items.length > 0 ? (
+      {}
+      {cartItems && cartItems.length > 0 ? (
         <>
           <div className="cart-items">
-            {cart.items.map(item => (
-              <div key={item.cart_item_id} className="cart-item-card">
-                <Link to={`/product/${item.product.product_id}`} className="cart-item-image-link">
-                  <img src={item.product.image_url} alt={item.product.name} className="cart-item-image" />
+            {cartItems.map((item) => (
+              <div key={item.productId} className="cart-item-card">
+                {" "}
+                {}
+                {}
+                <Link
+                  to={`/product/${item.productId}`}
+                  className="cart-item-image-link"
+                >
+                  <img
+                    src={item.productDetails.image_url}
+                    alt={item.productDetails.name}
+                    className="cart-item-image"
+                  />
                 </Link>
                 <div className="cart-item-details">
-                  <h3 className="cart-item-title"><Link to={`/product/${item.product.product_id}`}>{item.product.name}</Link></h3>
-                  {/* Convert item.product.price to a number */}
-                  <p className="cart-item-price">${parseFloat(item.product.price).toFixed(2)}</p>
+                  {}
+                  <h3 className="cart-item-title">
+                    <Link to={`/product/${item.productId}`}>
+                      {item.productDetails.name}
+                    </Link>
+                  </h3>
+                  {}
+                  <p className="cart-item-price">
+                    ${parseFloat(item.productDetails.price).toFixed(2)}
+                  </p>
+                  {}
                   <div className="cart-item-quantity-controls">
-                    <button onClick={() => handleUpdateQuantity(item.product.product_id, item.quantity - 1)}>-</button>
+                    <button
+                      onClick={() =>
+                        handleUpdateQuantity(item.productId, item.quantity - 1)
+                      }
+                      disabled={item.quantity <= 1}
+                    >
+                      -
+                    </button>
                     <span>{item.quantity}</span>
-                    <button onClick={() => handleUpdateQuantity(item.product.product_id, item.quantity + 1)}>+</button>
+                    <button
+                      onClick={() =>
+                        handleUpdateQuantity(item.productId, item.quantity + 1)
+                      }
+                    >
+                      +
+                    </button>
                   </div>
-                  {/* Convert item.product.price to a number */}
-                  <p className="cart-item-total">Subtotal: ${(item.quantity * parseFloat(item.product.price)).toFixed(2)}</p>
+                  {}
+                  <p className="cart-item-total">
+                    Subtotal: $
+                    {(
+                      item.quantity * parseFloat(item.productDetails.price)
+                    ).toFixed(2)}
+                  </p>
                 </div>
-                <button onClick={() => handleRemoveItem(item.product.product_id)} className="remove-item-button">Remove</button>
+                {}
+                <button
+                  onClick={() => handleRemoveItem(item.productId)}
+                  className="remove-item-button"
+                >
+                  Remove
+                </button>
               </div>
             ))}
           </div>
           <div className="cart-summary">
             <h3>Total: ${calculateTotal().toFixed(2)}</h3>
-            <button onClick={() => navigate('/checkout')} className="checkout-button">Proceed to Checkout</button>
+            <button
+              onClick={() => navigate("/checkout")}
+              className="checkout-button"
+            >
+              Proceed to Checkout
+            </button>
           </div>
         </>
       ) : (
-        <p className="empty-cart-message">Your cart is empty. <Link to="/">Start shopping!</Link></p>
+        <p className="empty-cart-message">
+          Your cart is empty. <Link to="/">Start shopping!</Link>
+        </p>
       )}
     </div>
   );

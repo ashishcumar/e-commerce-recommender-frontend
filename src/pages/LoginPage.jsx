@@ -1,13 +1,12 @@
-// e-commerce-recommender-frontend/src/pages/LoginPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUser, getUser } from "../api"; // Import API functions
-import "../assets/styles/LoginPage.css"; // New CSS file
+import { createUser, getUser } from "../api";
+import "../assets/styles/LoginPage.css";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState(""); // For registration
+  const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +18,6 @@ function LoginPage() {
     try {
       let userData;
       if (isRegistering) {
-        // Register new user
         userData = await createUser({ name, email, password });
         if (userData?.user_id) {
           localStorage.setItem("user_id", JSON.stringify(userData?.user_id));
@@ -27,27 +25,21 @@ function LoginPage() {
         setMessage(
           `Registration successful for ${userData.email}. You can now log in.`
         );
-        setIsRegistering(false); // Switch to login mode after registration
+        setIsRegistering(false);
         setEmail("");
         setPassword("");
         setName("");
       } else {
-        // Simple login simulation: try to get user by email.
-        // In a real app, you'd send username/password to backend for authentication.
-        // For this demo, we assume if user exists, they are "logged in".
-        // A more robust approach would be to have a dedicated /login endpoint
-        // that validates credentials and returns a user ID/token.
-        const allUsers = await getUser(""); // Fetch all users (simplistic)
+        const allUsers = await getUser("");
         const foundUser = allUsers.find((u) => u.email === email);
 
         if (foundUser) {
-          // Store the user ID (Django's product_id) in local storage
           localStorage.setItem("ecommerce_user_id", foundUser.user_id);
           localStorage.setItem("ecommerce_user_name", foundUser.name);
           setMessage(`Welcome, ${foundUser.name}! Logging you in...`);
-          // Redirect to home or a dashboard
+
           navigate("/");
-          window.location.reload(); // Force reload to update context/state if necessary
+          window.location.reload();
         } else {
           setMessage(
             "Login failed: User not found or incorrect credentials. Try registering."

@@ -1,25 +1,24 @@
-/* e-commerce-recommender-frontend/src/assets/styles/LoginPage.css */
 .login-page {
-  max-width: 450px; /* Slightly wider for better form elements */
-  margin: 4rem auto; /* More vertical margin to center on page */
-  padding: 3rem; /* More generous padding inside the card */
-  background-color: #ffffff; /* White background for a clean look */
-  border-radius: 10px; /* Consistent rounded corners */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+  max-width: 450px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border: 1px solid #e0e0e0; /* Subtle border for definition */
+  border: 1px solid #e0e0e0;
 }
 
 .login-page h2 {
-  color: #222; /* Darker heading color */
-  margin-bottom: 2.5rem; /* More space below heading */
-  font-size: 2rem; /* Larger font size for heading */
+  color: #222;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 .auth-message {
-  color: #007bff; /* Primary blue for messages */
-  margin-bottom: 1.5rem; /* More space below message */
+  color: #007bff;
+  margin-bottom: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -27,7 +26,7 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem; /* Increased gap for better spacing between form groups */
+  gap: 1.8rem;
 }
 
 .form-group {
@@ -36,57 +35,57 @@
 
 .form-group label {
   display: block;
-  margin-bottom: 0.6rem; /* More space below label */
-  color: #555; /* Softer grey for labels */
+  margin-bottom: 0.6rem;
+  color: #555;
   font-weight: 500;
   font-size: 0.95rem;
 }
 
 .form-group input {
   width: 100%;
-  padding: 0.9rem 1.2rem; /* More generous padding */
-  border: 1px solid #ddd; /* Lighter border color */
-  border-radius: 6px; /* Consistent rounded corners */
-  background-color: #f9f9f9; /* Very light background for input fields */
-  color: #333; /* Darker text for input */
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333;
   font-size: 1rem;
   box-sizing: border-box;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .form-group input:focus {
-  border-color: #007bff; /* Primary blue on focus */
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle blue glow on focus */
-  outline: none; /* Remove default outline */
-  background-color: #ffffff; /* White background on focus */
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+  background-color: #ffffff;
 }
 
 .auth-button {
-  background-color: #007bff; /* Primary blue for action button */
+  background-color: #007bff;
   color: white;
-  padding: 1.2rem; /* More generous padding */
-  font-size: 1.15rem; /* Slightly larger font */
+  padding: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
   border: none;
-  border-radius: 8px; /* Consistent border radius */
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-  margin-top: 1rem; /* Add margin to separate from last input */
+  margin-top: 1rem;
 }
 
 .auth-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 .toggle-auth-mode {
-  margin-top: 2rem; /* More space above toggle text */
-  color: #777; /* Softer grey for instructional text */
+  margin-top: 2rem;
+  color: #777;
   font-size: 0.95rem;
 }
 
 .toggle-auth-mode span {
-  color: #007bff; /* Primary blue for the clickable link */
+  color: #007bff;
   cursor: pointer;
   text-decoration: underline;
   font-weight: 500;
@@ -94,13 +93,12 @@
 }
 
 .toggle-auth-mode span:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3;
 }
 
-/* Responsive adjustments */
 @media (max-width: 500px) {
   .login-page {
-    margin: 2rem 15px; /* Adjust margin for very small screens */
+    margin: 2rem 15px;
     padding: 2rem;
   }
 
